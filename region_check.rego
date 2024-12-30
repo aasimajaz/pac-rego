@@ -1,4 +1,4 @@
-package terraform.aramco
+package terraform.ar
 
 import input as tfplan
 #creates := [res | res:=tfplan.resource_changes[_]; res.change.actions[_] == "create"]

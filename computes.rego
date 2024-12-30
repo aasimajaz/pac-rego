@@ -1,4 +1,4 @@
-package terraform.aramco.compute
+package terraform.ar.compute
 
 #import input as tfplan
 #creates := [res | res:=tfplan.resource_changes[_]; res.change.actions[_] == "create"]
@@ -18,8 +18,10 @@ deny[msg] if{
 
     # Extract the machine type
     machine_type := resource.change.after.machine_type
-    # Validate the machine type
+    #enable print to see machine_type detected
+    # print(machine_type)
 
+    # Validate the machine type
     not machine_type in allowed_compute_types
 
     # Return the denial message
