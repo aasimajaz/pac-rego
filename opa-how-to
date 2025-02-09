@@ -3,6 +3,10 @@
 #
 # Converting terraform plan to json format
 $ terraform plan -out=tfplan.binary
+
+# another way to execute plan is by providing directory with -chdir
+$ terraform -chdir=$HOME/iac/pac-test plan -out=$HOME/iac/tfplan.binary
+
 $ terraform show -json tfplan.binary > tfplan.json
 
 #loading json in opa
