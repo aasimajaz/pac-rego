@@ -22,7 +22,7 @@ deny[msg] if{
     # print(machine_type)
 
     # Validate the machine type
-    not machine_type in allowed_compute_types
+    not allowed_compute_types[machine_type]
 
     # Return the denial message
     msg := sprintf(
