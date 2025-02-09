@@ -4,7 +4,7 @@ package terraform.ar.compute
 allowed_compute_types = {"n1-standard-1", "n2-standard-2"}
 
 # Rule to deny if an invalid compute type is detected
-deny[msg] {
+deny[msg] if {
     # Extract each resource from the Terraform plan
     resource := input.resource_changes[resource_idx]
 
